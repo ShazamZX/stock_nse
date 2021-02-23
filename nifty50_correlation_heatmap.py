@@ -10,13 +10,10 @@ Original file is located at
 import pandas as pd
 import pandas_datareader as web
 import pickle
-from google.colab import files
 import datetime as dt
 from dateutil.relativedelta import relativedelta
 import seaborn as sms
 import matplotlib.pyplot as plt
-
-files.upload()
 
 #loading the symbols into dataframe and getting timespan of 1 year
 symbol = []
@@ -48,7 +45,7 @@ def correlation(ticker):
 corr_df = correlation(symbol)
 corr_df.to_csv('NIFTYcorr.csv')
 
-files.download('NIFTYcorr.csv')
+
 
 #Plotting the heatmap
 ax = sms.heatmap(corr_df, center = 0, cmap = 'RdYlGn', annot = True , linewidth = 0.5)
